@@ -20,6 +20,7 @@
                 @include('student.partials.alerts')
                 @yield('content')
             </main>
+            @include('components.footer')
         </div>
     </body>
 </html>

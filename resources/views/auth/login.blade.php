@@ -1,115 +1,233 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIJURUSAN - Masuk</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-<body class="bg-gray-50 text-gray-800 antialiased">
+{{-- resources/views/auth/login.blade.php --}}
 
-    {{-- Navbar --}}
-    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+@extends('layouts.guest')
 
-            <div class="">
-                <a href="{{ route('welcome') }}" class="flex items-center gap-2.5">
-                    <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" />
-                            <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" />
-                        </svg>
-                    </div>
-                    <span class="text-lg font-semibold text-gray-900">
-                        SIJU<span class="text-blue-600">RUSAN</span>
-                    </span>
-                </a>
+@section('content')
+
+<section class="min-h-screen grid lg:grid-cols-2">
+
+    {{-- LEFT --}}
+    <div class="flex items-center justify-center px-8 py-12 bg-white">
+
+        <div class="w-full max-w-md">
+
+            {{-- Logo --}}
+            <div class="flex items-center gap-2.5 mb-12">
+                <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-lg shadow-blue-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" />
+                        <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" />
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-gray-900 tracking-tight">
+                    SIJU<span class="text-blue-600">RUSAN</span>
+                </span>
             </div>
 
-            <!-- <div class="hidden md:flex items-center gap-6">
-                <a href="{{ route('welcome') }}#tentang" class="text-sm text-gray-500 hover:text-gray-800 transition">Tentang</a>
-                <a href="{{ route('welcome') }}#cara" class="text-sm text-gray-500 hover:text-gray-800 transition">Cara Pakai</a>
-            </div> -->
+            {{-- Heading --}}
+            <div class="mb-10">
 
-            <div class="flex items-center gap-2">
-                <a href="{{ route('register') }}"
-                   class="px-4 py-2 text-sm rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition">
-                    Daftar
-                </a>
+                <h2 class="text-5xl leading-tight font-bold text-blue-600">
+                    Temukan Jurusan Yang Sesuai Dengan Potensimu
+                </h2>
+
+                <p class="mt-6 text-gray-500 text-base">
+                    Masuk untuk melanjutkan proses rekomendasi jurusan SMK berbasis metode SAW.
+                </p>
+
             </div>
 
-        </div>
-    </nav>
+            {{-- Session --}}
+            @if (session('status'))
+            <div class="mb-5 text-sm text-green-700 bg-green-50 border border-green-200 rounded-xl px-4 py-3">
+                {{ session('status') }}
+            </div>
+            @endif
 
-    {{-- Login Form --}}
-    <section class="py-16">
-        <div class="max-w-md mx-auto px-6">
+            {{-- Form --}}
+            <form method="POST"
+                action="{{ route('login') }}"
+                class="space-y-5">
 
-            <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+                @csrf
 
-                <div class="text-center mb-6">
-                    <h1 class="text-2xl font-bold text-gray-900">Masuk ke Akun</h1>
-                    <p class="mt-2 text-sm text-gray-500">Masukkan kredensial Anda untuk melanjutkan</p>
+                {{-- Email --}}
+                <div>
+
+                    <label for="email"
+                        class="block text-sm font-medium text-gray-700 mb-2">
+
+                        Email Address
+
+                    </label>
+
+                    <input
+                        id="email"
+                        type="email"
+                        name="email"
+                        value="{{ old('email') }}"
+                        required
+                        autofocus
+
+                        class="w-full border border-gray-300
+                            focus:border-blue-500
+                            focus:ring-blue-500
+                            rounded-xl
+                            px-5 py-4 bg-gray-50">
+
+                    @error('email')
+                    <p class="mt-2 text-sm text-red-600">
+                        {{ $message }}
+                    </p>
+                    @enderror
+
                 </div>
 
-                <!-- Session Status -->
-                @if (session('status'))
-                    <div class="mb-4 text-sm text-green-600 bg-green-50 border border-green-200 rounded-lg p-3">
-                        {{ session('status') }}
-                    </div>
-                @endif
+                {{-- Password --}}
+                <div>
 
-                <form method="POST" action="{{ route('login') }}">
-                    @csrf
+                    <label for="password"
+                        class="block text-sm font-medium text-gray-700 mb-2">
 
-                    <!-- Email Address -->
-                    <div class="mb-4">
-                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                        <input id="email" class="block mt-1 w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 px-3 py-2" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-                        @error('email')
-                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                        @enderror
-                    </div>
+                        Password
 
-                    <!-- Password -->
-                    <div class="mb-4">
-                        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                        <input id="password" class="block mt-1 w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 px-3 py-2"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
-                        @error('password')
-                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                        @enderror
-                    </div>
+                    </label>
 
-                    <!-- Remember Me -->
-                    <div class="mb-6">
-                        <label for="remember_me" class="inline-flex items-center">
-                            <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-blue-600 shadow-sm focus:ring-blue-500" name="remember">
-                            <span class="ms-2 text-sm text-gray-600">Ingat saya</span>
-                        </label>
-                    </div>
+                    <input
+                        id="password"
+                        type="password"
+                        name="password"
+                        required
 
-                    <div class="flex items-center justify-between">
-                        @if (Route::has('password.request'))
-                            <a class="text-sm text-blue-600 hover:text-blue-800 underline" href="{{ route('password.request') }}">
-                                Lupa password?
-                            </a>
-                        @endif
+                        class="w-full border border-gray-300
+                            focus:border-blue-500
+                            focus:ring-blue-500
+                            rounded-xl
+                            px-5 py-4 bg-gray-50">
 
-                        <button type="submit" class="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition">
-                            Masuk
-                        </button>
-                    </div>
-                </form>
+                    @error('password')
+                    <p class="mt-2 text-sm text-red-600">
+                        {{ $message }}
+                    </p>
+                    @enderror
 
-            </div>
+                </div>
+
+                {{-- Remember + Forgot --}}
+                <div class="flex items-center justify-between">
+
+                    <label class="flex items-center gap-2 text-sm text-gray-600">
+
+                        <input
+                            type="checkbox"
+                            name="remember"
+                            class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+
+                        Remember me
+
+                    </label>
+
+                    @if (Route::has('password.request'))
+
+                    <a href="{{ route('password.request') }}"
+                        class="text-sm text-blue-600 hover:text-blue-700">
+
+                        Forgot password?
+
+                    </a>
+
+                    @endif
+
+                </div>
+
+                {{-- Actions --}}
+                <div class="flex items-center justify-between pt-3">
+
+                    <button
+                        type="submit"
+                        class="bg-blue-600 hover:bg-blue-700
+                            text-white
+                            px-10 py-3.5
+                            rounded-xl
+                            font-medium
+                            shadow-lg shadow-blue-200
+                            transition">
+
+                        Login
+
+                    </button>
+
+                    <a href="{{ route('register') }}"
+                        class="border border-blue-600
+                            text-blue-600
+                            hover:bg-blue-50
+                            px-10 py-3.5
+                            rounded-xl
+                            font-medium
+                            transition">
+
+                        Sign Up
+
+                    </a>
+
+                </div>
+
+            </form>
 
         </div>
-    </section>
 
-</body>
-</html>
+    </div>
+
+   {{-- RIGHT --}}
+<div class="hidden lg:flex items-center justify-center bg-gray-50 overflow-hidden">
+
+    <div class="w-full max-w-xl px-8 pt-8">
+
+        {{-- Back Button --}}
+        <div class="flex justify-end mb-8 -translate-y-20">
+
+            <a href="{{ route('welcome') }}"
+               title="Kembali ke Beranda"
+               class="w-11 h-11 rounded-full border border-gray-300
+                      flex items-center justify-center
+                      text-gray-600 hover:text-blue-600
+                      hover:border-blue-600
+                      transition">
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     class="w-5 h-5"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     stroke="currentColor">
+
+                    <path stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M15 19l-7-7 7-7" />
+
+                </svg>
+
+            </a>
+
+        </div>
+
+        {{-- Illustration --}}
+        <div>
+
+            <img
+                src="{{ asset('Learning-bro (1).png') }}"
+                alt="Siswa SMK"
+                class="w-full object-contain"
+            >
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+@endsection
