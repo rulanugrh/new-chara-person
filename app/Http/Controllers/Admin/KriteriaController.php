@@ -24,7 +24,7 @@ class KriteriaController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required|string|max:255|unique:kriterias,name',
+            'name' => 'required|string|max:255|unique:kriteria,name',
             'description' => 'nullable|string',
             'data_source' => 'required|in:academic,questionnaire,manual',
             'max_value' => 'required|integer|min:1',
@@ -47,7 +47,7 @@ class KriteriaController extends Controller
     public function update(Request $request, Kriteria $kriteria)
     {
         $data = $request->validate([
-            'name' => 'required|string|max:255|unique:kriterias,name,' . $kriteria->id,
+            'name' => 'required|string|max:255|unique:kriteria,name,' . $kriteria->id,
             'description' => 'nullable|string',
             'data_source' => 'required|in:academic,questionnaire,manual',
             'max_value' => 'required|integer|min:1',

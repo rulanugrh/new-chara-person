@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('kriterias', function (Blueprint $table) {
+        Schema::table('kriteria', function (Blueprint $table) {
             $table->boolean('is_minat')->default(false)->after('data_source');
         });
     }
@@ -21,7 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('kriterias', function (Blueprint $table) {
+        Schema::table('kriteria', function (Blueprint $table) {
             $table->dropColumn('is_minat');
         });
     }

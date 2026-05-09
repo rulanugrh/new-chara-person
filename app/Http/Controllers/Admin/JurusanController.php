@@ -24,7 +24,7 @@ class JurusanController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required|string|max:255|unique:jurusans,name',
+            'name' => 'required|string|max:255|unique:jurusan,name',
             'description' => 'nullable|string',
             'active' => 'boolean',
         ]);
@@ -52,7 +52,7 @@ class JurusanController extends Controller
     public function update(Request $request, Jurusan $jurusan)
     {
         $data = $request->validate([
-            'name' => 'required|string|max:255|unique:jurusans,name,' . $jurusan->id,
+            'name' => 'required|string|max:255|unique:jurusan,name,' . $jurusan->id,
             'description' => 'nullable|string',
             'active' => 'boolean',
         ]);

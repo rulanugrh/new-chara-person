@@ -34,8 +34,8 @@ class PertanyaanController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'jurusan_id' => 'required|exists:jurusans,id',
-            'kriteria_id' => 'nullable|exists:kriterias,id',
+            'jurusan_id' => 'required|exists:jurusan,id',
+            'kriteria_id' => 'nullable|exists:kriteria,id',
             'question' => 'required|string',
             'help_text' => 'nullable|string',
             'active' => 'boolean',
@@ -61,8 +61,8 @@ class PertanyaanController extends Controller
     public function update(Request $request, Pertanyaan $pertanyaan)
     {
         $data = $request->validate([
-            'jurusan_id' => 'required|exists:jurusans,id',
-            'kriteria_id' => 'nullable|exists:kriterias,id',
+            'jurusan_id' => 'required|exists:jurusan,id',
+            'kriteria_id' => 'nullable|exists:kriteria,id',
             'question' => 'required|string',
             'help_text' => 'nullable|string',
             'active' => 'boolean',

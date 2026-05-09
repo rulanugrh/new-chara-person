@@ -9,6 +9,8 @@ class Kriteria extends Model
 {
     use HasFactory;
 
+    protected $table = 'kriteria';
+
     public const SOURCE_ACADEMIC = 'academic';
     public const SOURCE_QUESTIONNAIRE = 'questionnaire';
     public const SOURCE_MANUAL = 'manual';

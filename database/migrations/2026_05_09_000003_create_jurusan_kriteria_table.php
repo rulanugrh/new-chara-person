@@ -10,8 +10,8 @@ return new class extends Migration
     {
         Schema::create('jurusan_kriteria', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('jurusan_id')->constrained('jurusans')->cascadeOnDelete();
-            $table->foreignId('kriteria_id')->constrained('kriterias')->cascadeOnDelete();
+            $table->foreignId('jurusan_id')->constrained('jurusan')->cascadeOnDelete();
+            $table->foreignId('kriteria_id')->constrained('kriteria')->cascadeOnDelete();
             $table->decimal('weight', 5, 2)->default(0);
             $table->string('value_source')->nullable();
             $table->timestamps();

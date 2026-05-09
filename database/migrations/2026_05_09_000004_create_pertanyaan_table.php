@@ -8,10 +8,10 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('pertanyaans', function (Blueprint $table) {
+        Schema::create('pertanyaan', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('jurusan_id')->constrained('jurusans')->cascadeOnDelete();
-            $table->foreignId('kriteria_id')->nullable()->constrained('kriterias')->nullOnDelete();
+            $table->foreignId('jurusan_id')->constrained('jurusan')->cascadeOnDelete();
+            $table->foreignId('kriteria_id')->nullable()->constrained('kriteria')->nullOnDelete();
             $table->text('question');
             $table->text('help_text')->nullable();
             $table->boolean('active')->default(true);
@@ -22,6 +22,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('pertanyaans');
+        Schema::dropIfExists('pertanyaan');
     }
 };

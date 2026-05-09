@@ -8,18 +8,20 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('jurusans', function (Blueprint $table) {
+        Schema::create('kriteria', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
             $table->text('description')->nullable();
-            $table->boolean('active')->default(true);
+            $table->enum('data_source', ['academic', 'questionnaire', 'manual'])->default('academic');
+            $table->unsignedSmallInteger('max_value')->default(100);
+            $table->boolean('is_benefit')->default(true);
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('jurusans');
+        Schema::dropIfExists('kriteria');
     }
 };

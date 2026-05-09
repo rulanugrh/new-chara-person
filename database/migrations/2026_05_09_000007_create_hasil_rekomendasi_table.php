@@ -8,10 +8,10 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('hasil_rekomendasis', function (Blueprint $table) {
+        Schema::create('hasil_rekomendasi', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('jurusan_id')->constrained('jurusans')->cascadeOnDelete();
+            $table->foreignId('jurusan_id')->constrained('jurusan')->cascadeOnDelete();
             $table->decimal('score', 10, 4);
             $table->unsignedInteger('rank')->nullable();
             $table->json('meta')->nullable();
@@ -22,6 +22,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('hasil_rekomendasis');
+        Schema::dropIfExists('hasil_rekomendasi');
     }
 };

@@ -9,7 +9,7 @@ class HasilRekomendasi extends Model
 {
     use HasFactory;
 
-    protected $table = 'hasil_rekomendasis';
+    protected $table = 'hasil_rekomendasi';
 
     protected $fillable = [
         'user_id',

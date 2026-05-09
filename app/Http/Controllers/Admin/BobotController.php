@@ -29,7 +29,7 @@ class BobotController extends Controller
     {
         $data = $request->validate([
             'academic_kriterias' => 'array',
-            'academic_kriterias.*' => 'integer|exists:kriterias,id',
+            'academic_kriterias.*' => 'integer|exists:kriteria,id',
             'academic_weights' => 'array',
             'academic_weights.*' => 'nullable|numeric|min:0|max:100',
             'minat_weight' => 'required|numeric|min:1|max:100',
