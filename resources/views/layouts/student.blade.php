@@ -12,9 +12,9 @@
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <body class="bg-gray-50 text-gray-800 antialiased">
         <div class="min-h-screen">
-            @include('student.partials.header')
+            @include('components.navbar')
 
             <main class="container mx-auto px-4 py-8">
                 @include('student.partials.alerts')

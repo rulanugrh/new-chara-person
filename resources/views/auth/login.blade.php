@@ -12,24 +12,26 @@
     <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
 
-            <div class="flex items-center gap-2.5">
-                <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" />
-                        <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" />
-                    </svg>
-                </div>
-                <span class="text-lg font-semibold text-gray-900">
-                    SIJU<span class="text-blue-600">RUSAN</span>
-                </span>
+            <div class="">
+                <a href="{{ route('welcome') }}" class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" />
+                            <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" />
+                        </svg>
+                    </div>
+                    <span class="text-lg font-semibold text-gray-900">
+                        SIJU<span class="text-blue-600">RUSAN</span>
+                    </span>
+                </a>
             </div>
 
-            <div class="hidden md:flex items-center gap-6">
+            <!-- <div class="hidden md:flex items-center gap-6">
                 <a href="{{ route('welcome') }}#tentang" class="text-sm text-gray-500 hover:text-gray-800 transition">Tentang</a>
                 <a href="{{ route('welcome') }}#cara" class="text-sm text-gray-500 hover:text-gray-800 transition">Cara Pakai</a>
-            </div>
+            </div> -->
 
             <div class="flex items-center gap-2">
                 <a href="{{ route('register') }}"

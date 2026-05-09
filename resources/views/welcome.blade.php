@@ -28,6 +28,7 @@
 
             <div class="hidden md:flex items-center gap-6">
                 <a href="#tentang" class="text-sm text-gray-500 hover:text-gray-800 transition">Tentang</a>
+                <a href="#tentang" class="text-sm text-gray-500 hover:text-gray-800 transition">Dashboard</a>
                 <a href="#cara" class="text-sm text-gray-500 hover:text-gray-800 transition">Cara Pakai</a>
             </div>
 

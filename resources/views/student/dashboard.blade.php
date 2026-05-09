@@ -1,55 +1,6 @@
 @extends('layouts.student')
 
 @section('content')
-<div class="bg-gray-50 text-gray-800 antialiased">
-
-    {{-- Navbar --}}
-    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
-
-            <div class="flex items-center gap-2.5">
-                <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" />
-                        <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" />
-                    </svg>
-                </div>
-                <span class="text-lg font-semibold text-gray-900">
-                    SIJU<span class="text-blue-600">RUSAN</span>
-                </span>
-            </div>
-
-            <div class="hidden md:flex items-center gap-6">
-                <a href="#tentang" class="text-sm text-gray-500 hover:text-gray-800 transition">Tentang</a>
-                <a href="#cara" class="text-sm text-gray-500 hover:text-gray-800 transition">Cara Pakai</a>
-            </div>
-
-            <div class="flex items-center gap-3">
-                <div class="flex items-center gap-2">
-                    <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-blue-600" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
-                            <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
-                            <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
-                        </svg>
-                    </div>
-                    <span class="text-sm text-gray-700">{{ Auth::user()->name }}</span>
-                </div>
-                <form method="POST" action="{{ route('logout') }}" class="inline">
-                    @csrf
-                    <button type="submit" class="px-3 py-1.5 text-xs rounded-lg border border-gray-200 text-gray-600 hover:bg-gray-50 transition">
-                        Keluar
-                    </button>
-                </form>
-            </div>
-
-        </div>
-    </nav>
-
     {{-- Hero Section --}}
     <section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
         <div>
