@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,11 +13,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        // Buat admin user
+        User::firstOrCreate(
+            ['email' => 'admin@spk.local'],
+            [
+                'name' => 'Admin SPK',
+                'password' => Hash::make('password123'),
+                'email_verified_at' => now(),
+            ]
+        );
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        // Seed kriteria
+        $this->call(KriteriaSeeder::class);
+
+        // Buat siswa contoh
+        User::factory(5)->create();
     }
 }
