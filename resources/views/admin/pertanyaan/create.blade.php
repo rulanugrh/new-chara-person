@@ -5,26 +5,16 @@
 
 @section('content')
     <div class="rounded-3xl bg-white p-6 border border-slate-200 shadow-sm">
-        <form action="{{ route('admin.pertanyaans.store') }}" method="POST" class="space-y-6">
+        <form action="{{ route('admin.pertanyaan.store') }}" method="POST" class="space-y-6">
             @csrf
 
-            <div class="grid gap-6 lg:grid-cols-2">
+            <div class="grid gap-6">
                 <div>
                     <label class="block text-sm font-medium text-slate-700">Jurusan</label>
                     <select name="jurusan_id" class="mt-2 w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3" required>
                         <option value="">Pilih jurusan</option>
                         @foreach($jurusans as $jurusan)
                             <option value="{{ $jurusan->id }}" {{ old('jurusan_id') == $jurusan->id ? 'selected' : '' }}>{{ $jurusan->name }}</option>
-                        @endforeach
-                    </select>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-slate-700">Kriteria (opsional)</label>
-                    <select name="kriteria_id" class="mt-2 w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3">
-                        <option value="">Tidak ada</option>
-                        @foreach($kriterias as $kriteria)
-                            <option value="{{ $kriteria->id }}" {{ old('kriteria_id') == $kriteria->id ? 'selected' : '' }}>{{ $kriteria->name }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -48,7 +38,7 @@
             </div>
 
             <div class="flex items-center gap-3">
-                <a href="{{ route('admin.pertanyaans.index') }}" class="rounded-full border border-slate-300 px-5 py-2 text-sm text-slate-700 hover:bg-slate-50">Kembali</a>
+                <a href="{{ route('admin.pertanyaan.index') }}" class="rounded-full border border-slate-300 px-5 py-2 text-sm text-slate-700 hover:bg-slate-50">Kembali</a>
                 <button type="submit" class="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white hover:bg-indigo-700">Simpan Pertanyaan</button>
             </div>
         </form>

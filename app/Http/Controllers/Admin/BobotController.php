@@ -13,7 +13,7 @@ class BobotController extends Controller
     {
         $jurusans = Jurusan::withCount('kriterias')->get();
 
-        return view('admin.bobots.index', compact('jurusans'));
+        return view('admin.bobot.index', compact('jurusans'));
     }
 
     public function edit(Jurusan $jurusan)
@@ -22,7 +22,7 @@ class BobotController extends Controller
         $academicKriterias = Kriteria::where('data_source', Kriteria::SOURCE_ACADEMIC)->get();
         $minatKriteria = Kriteria::where('is_minat', true)->first();
 
-        return view('admin.bobots.edit', compact('jurusan', 'academicKriterias', 'minatKriteria'));
+        return view('admin.bobot.edit', compact('jurusan', 'academicKriterias', 'minatKriteria'));
     }
 
     public function update(Request $request, Jurusan $jurusan)

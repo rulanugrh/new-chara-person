@@ -21,16 +21,16 @@
         <a href="{{ route('admin.dashboard') }}" class="group block rounded-xl px-4 py-3 text-sm font-medium {{ request()->routeIs('admin.dashboard') ? 'bg-slate-800 text-white' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
             Dashboard
         </a>
-        <a href="{{ route('admin.jurusans.index') }}" class="group block rounded-xl px-4 py-3 text-sm font-medium {{ request()->routeIs('admin.jurusans.*') ? 'bg-slate-800 text-white' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
+        <a href="{{ route('admin.jurusan.index') }}" class="group block rounded-xl px-4 py-3 text-sm font-medium {{ request()->routeIs('admin.jurusan.*') ? 'bg-slate-800 text-white' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
             Jurusan
         </a>
-        <a href="{{ route('admin.kriterias.index') }}" class="group block rounded-xl px-4 py-3 text-sm font-medium {{ request()->routeIs('admin.kriterias.*') ? 'bg-slate-800 text-white' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
+        <a href="{{ route('admin.kriteria.index') }}" class="group block rounded-xl px-4 py-3 text-sm font-medium {{ request()->routeIs('admin.kriteria.*') ? 'bg-slate-800 text-white' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
             Kriteria
         </a>
         <a href="{{ route('admin.bobot.index') }}" class="group block rounded-xl px-4 py-3 text-sm font-medium {{ request()->routeIs('admin.bobot.*') ? 'bg-slate-800 text-white' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
             Bobot Jurusan
         </a>
-        <a href="{{ route('admin.pertanyaans.index') }}" class="group block rounded-xl px-4 py-3 text-sm font-medium {{ request()->routeIs('admin.pertanyaans.*') ? 'bg-slate-800 text-white' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
+        <a href="{{ route('admin.pertanyaan.index') }}" class="group block rounded-xl px-4 py-3 text-sm font-medium {{ request()->routeIs('admin.pertanyaan.*') ? 'bg-slate-800 text-white' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">
             Pertanyaan Kuisioner
         </a>
         <a href="{{ route('admin.siswa.index') }}" class="group block rounded-xl px-4 py-3 text-sm font-medium {{ request()->routeIs('admin.siswa.*') ? 'bg-slate-800 text-white' : 'text-slate-300 hover:bg-slate-800 hover:text-white' }}">

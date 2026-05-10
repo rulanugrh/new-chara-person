@@ -5,7 +5,7 @@
 
 @section('content')
     <div class="rounded-3xl bg-white p-6 border border-slate-200 shadow-sm">
-        <form action="{{ route('admin.kriterias.update', $kriteria) }}" method="POST" class="space-y-6">
+        <form action="{{ route('admin.kriteria.update', $kriteria) }}" method="POST" class="space-y-6">
             @csrf
             @method('PUT')
 
@@ -36,7 +36,7 @@
             </div>
 
             <div class="flex items-center gap-3">
-                <a href="{{ route('admin.kriterias.index') }}" class="rounded-full border border-slate-300 px-5 py-2 text-sm text-slate-700 hover:bg-slate-50">Kembali</a>
+                <a href="{{ route('admin.kriteria.index') }}" class="rounded-full border border-slate-300 px-5 py-2 text-sm text-slate-700 hover:bg-slate-50">Kembali</a>
                 <button type="submit" class="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white hover:bg-indigo-700">Simpan Perubahan</button>
             </div>
         </form>

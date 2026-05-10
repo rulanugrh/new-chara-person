@@ -9,7 +9,7 @@
             <h2 class="text-lg font-semibold text-slate-900">Data Kriteria</h2>
             <p class="text-sm text-slate-500">Tentukan kriteria yang akan digunakan untuk setiap jurusan.</p>
         </div>
-        <a href="{{ route('admin.kriterias.create') }}" class="inline-flex items-center rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">
+        <a href="{{ route('admin.kriteria.create') }}" class="inline-flex items-center rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">
             Tambah Kriteria
         </a>
     </div>
@@ -22,8 +22,8 @@
                     <div class="text-sm text-slate-500">{{ ucfirst($kriteria->data_source) }} – Maksimal {{ $kriteria->max_value }}</div>
                 </div>
                 <div class="flex flex-wrap items-center gap-2">
-                    <a href="{{ route('admin.kriterias.edit', $kriteria) }}" class="rounded-full border border-slate-300 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Edit</a>
-                    <form method="POST" action="{{ route('admin.kriterias.destroy', $kriteria) }}" class="inline-block">
+                    <a href="{{ route('admin.kriteria.edit', $kriteria) }}" class="rounded-full border border-slate-300 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Edit</a>
+                    <form method="POST" action="{{ route('admin.kriteria.destroy', $kriteria) }}" class="inline-block">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="rounded-full bg-rose-500 px-4 py-2 text-sm text-white hover:bg-rose-600" onclick="return confirm('Hapus kriteria ini?')">Hapus</button>

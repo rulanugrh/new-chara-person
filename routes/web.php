@@ -34,12 +34,12 @@ Route::middleware(['auth', 'verified'])
     ->middleware('role:admin')
     ->group(function () {
         Route::get('/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
-        Route::resource('jurusans', \App\Http\Controllers\Admin\JurusanController::class);
-        Route::resource('kriterias', \App\Http\Controllers\Admin\KriteriaController::class)->except(['show']);
+        Route::resource('jurusan', \App\Http\Controllers\Admin\JurusanController::class);
+        Route::resource('kriteria', \App\Http\Controllers\Admin\KriteriaController::class)->except(['show']);
         Route::get('bobot', [\App\Http\Controllers\Admin\BobotController::class, 'index'])->name('bobot.index');
         Route::get('bobot/{jurusan}/edit', [\App\Http\Controllers\Admin\BobotController::class, 'edit'])->name('bobot.edit');
         Route::post('bobot/{jurusan}', [\App\Http\Controllers\Admin\BobotController::class, 'update'])->name('bobot.update');
-        Route::resource('pertanyaans', \App\Http\Controllers\Admin\PertanyaanController::class);
+        Route::resource('pertanyaan', \App\Http\Controllers\Admin\PertanyaanController::class);
         Route::get('siswa', [\App\Http\Controllers\Admin\SiswaController::class, 'index'])->name('siswa.index');
         Route::get('siswa/{user}', [\App\Http\Controllers\Admin\SiswaController::class, 'show'])->name('siswa.show');
         Route::get('hasil-rekomendasi', [\App\Http\Controllers\Admin\HasilRekomendasiController::class, 'index'])->name('hasil.index');

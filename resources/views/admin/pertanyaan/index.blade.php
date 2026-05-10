@@ -19,7 +19,7 @@
                 </select>
                 <button class="rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white">Filter</button>
             </form>
-            <a href="{{ route('admin.pertanyaans.create') }}" class="rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">Tambah Pertanyaan</a>
+            <a href="{{ route('admin.pertanyaan.create') }}" class="rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">Tambah Pertanyaan</a>
         </div>
     </div>
 
@@ -29,11 +29,11 @@
                 <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4">
                     <div>
                         <div class="font-semibold text-slate-900">{{ $pertanyaan->question }}</div>
-                        <div class="text-sm text-slate-500 mt-1">Jurusan: {{ $pertanyaan->jurusan->name }} @if($pertanyaan->kriteria) • Kriteria: {{ $pertanyaan->kriteria->name }}@endif</div>
+                        <div class="text-sm text-slate-500 mt-1">Jurusan: {{ $pertanyaan->jurusan->name }}</div>
                     </div>
                     <div class="flex flex-wrap items-center gap-2">
-                        <a href="{{ route('admin.pertanyaans.edit', $pertanyaan) }}" class="rounded-full border border-slate-300 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Edit</a>
-                        <form action="{{ route('admin.pertanyaans.destroy', $pertanyaan) }}" method="POST" class="inline-block">
+                        <a href="{{ route('admin.pertanyaan.edit', $pertanyaan) }}" class="rounded-full border border-slate-300 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Edit</a>
+                        <form action="{{ route('admin.pertanyaan.destroy', $pertanyaan) }}" method="POST" class="inline-block">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="rounded-full bg-rose-500 px-4 py-2 text-sm text-white hover:bg-rose-600" onclick="return confirm('Hapus pertanyaan ini?')">Hapus</button>

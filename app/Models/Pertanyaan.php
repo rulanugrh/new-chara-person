@@ -13,7 +13,6 @@ class Pertanyaan extends Model
 
     protected $fillable = [
         'jurusan_id',
-        'kriteria_id',
         'question',
         'help_text',
         'active',

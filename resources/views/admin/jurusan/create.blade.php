@@ -5,7 +5,7 @@
 
 @section('content')
     <div class="rounded-3xl bg-white p-6 border border-slate-200 shadow-sm">
-        <form action="{{ route('admin.jurusans.store') }}" method="POST" class="space-y-6">
+        <form action="{{ route('admin.jurusan.store') }}" method="POST" class="space-y-6">
             @csrf
 
             <div>
@@ -26,7 +26,7 @@
             </div>
 
             <div class="flex items-center gap-3">
-                <a href="{{ route('admin.jurusans.index') }}" class="rounded-full border border-slate-300 px-5 py-2 text-sm text-slate-700 hover:bg-slate-50">Kembali</a>
+                <a href="{{ route('admin.jurusan.index') }}" class="rounded-full border border-slate-300 px-5 py-2 text-sm text-slate-700 hover:bg-slate-50">Kembali</a>
                 <button type="submit" class="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white hover:bg-indigo-700">Simpan Jurusan</button>
             </div>
         </form>

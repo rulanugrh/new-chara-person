@@ -20,22 +20,20 @@ class PertanyaanController extends Controller
             ->orderBy('jurusan_id')
             ->paginate(15);
 
-        return view('admin.pertanyaans.index', compact('pertanyaans', 'jurusans', 'jurusanId'));
+        return view('admin.pertanyaan.index', compact('pertanyaans', 'jurusans', 'jurusanId'));
     }
 
     public function create()
     {
         $jurusans = Jurusan::active()->get();
-        $kriterias = Kriteria::all();
 
-        return view('admin.pertanyaans.create', compact('jurusans', 'kriterias'));
+        return view('admin.pertanyaan.create', compact('jurusans'));
     }
 
     public function store(Request $request)
     {
         $data = $request->validate([
             'jurusan_id' => 'required|exists:jurusan,id',
-            'kriteria_id' => 'nullable|exists:kriteria,id',
             'question' => 'required|string',
             'help_text' => 'nullable|string',
             'active' => 'boolean',
@@ -47,22 +45,20 @@ class PertanyaanController extends Controller
 
         Pertanyaan::create($data);
 
-        return redirect()->route('admin.pertanyaans.index')->with('success', 'Pertanyaan berhasil ditambahkan.');
+        return redirect()->route('admin.pertanyaan.index')->with('success', 'Pertanyaan berhasil ditambahkan.');
     }
 
     public function edit(Pertanyaan $pertanyaan)
     {
         $jurusans = Jurusan::active()->get();
-        $kriterias = Kriteria::all();
 
-        return view('admin.pertanyaans.edit', compact('pertanyaan', 'jurusans', 'kriterias'));
+        return view('admin.pertanyaan.edit', compact('pertanyaan', 'jurusans'));
     }
 
     public function update(Request $request, Pertanyaan $pertanyaan)
     {
         $data = $request->validate([
             'jurusan_id' => 'required|exists:jurusan,id',
-            'kriteria_id' => 'nullable|exists:kriteria,id',
             'question' => 'required|string',
             'help_text' => 'nullable|string',
             'active' => 'boolean',
@@ -74,13 +70,13 @@ class PertanyaanController extends Controller
 
         $pertanyaan->update($data);
 
-        return redirect()->route('admin.pertanyaans.index')->with('success', 'Pertanyaan berhasil diperbarui.');
+        return redirect()->route('admin.pertanyaan.index')->with('success', 'Pertanyaan berhasil diperbarui.');
     }
 
     public function destroy(Pertanyaan $pertanyaan)
     {
         $pertanyaan->delete();
 
-        return redirect()->route('admin.pertanyaans.index')->with('success', 'Pertanyaan berhasil dihapus.');
+        return redirect()->route('admin.pertanyaan.index')->with('success', 'Pertanyaan berhasil dihapus.');
     }
 }

@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Buat admin user
+        // Create admin user
         User::firstOrCreate(
             ['email' => 'admin@spk.local'],
             [
@@ -23,10 +23,10 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        // Seed kriteria
+        // Seed criteria
         $this->call(KriteriaSeeder::class);
 
-        // Buat siswa contoh
+        // Create sample students
         User::factory(5)->create();
     }
 }

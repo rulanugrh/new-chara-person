@@ -13,12 +13,12 @@ class KriteriaController extends Controller
     {
         $kriterias = Kriteria::paginate(12);
 
-        return view('admin.kriterias.index', compact('kriterias'));
+        return view('admin.kriteria.index', compact('kriterias'));
     }
 
     public function create()
     {
-        return view('admin.kriterias.create');
+        return view('admin.kriteria.create');
     }
 
     public function store(Request $request)
@@ -36,12 +36,12 @@ class KriteriaController extends Controller
 
         Kriteria::create($data);
 
-        return redirect()->route('admin.kriterias.index')->with('success', 'Kriteria berhasil disimpan.');
+        return redirect()->route('admin.kriteria.index')->with('success', 'Kriteria berhasil disimpan.');
     }
 
     public function edit(Kriteria $kriteria)
     {
-        return view('admin.kriterias.edit', compact('kriteria'));
+        return view('admin.kriteria.edit', compact('kriteria'));
     }
 
     public function update(Request $request, Kriteria $kriteria)
@@ -59,13 +59,13 @@ class KriteriaController extends Controller
 
         $kriteria->update($data);
 
-        return redirect()->route('admin.kriterias.index')->with('success', 'Kriteria berhasil diperbarui.');
+        return redirect()->route('admin.kriteria.index')->with('success', 'Kriteria berhasil diperbarui.');
     }
 
     public function destroy(Kriteria $kriteria)
     {
         $kriteria->delete();
 
-        return redirect()->route('admin.kriterias.index')->with('success', 'Kriteria berhasil dihapus.');
+        return redirect()->route('admin.kriteria.index')->with('success', 'Kriteria berhasil dihapus.');
     }
 }

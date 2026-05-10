@@ -15,12 +15,15 @@
     <body class="bg-gray-50 text-gray-800 antialiased">
         <div class="min-h-screen">
             @include('components.navbar')
+            <x-student-header />
 
             <main class="container mx-auto px-4 py-8">
-                @include('student.partials.alerts')
+                <x-alerts />
                 @yield('content')
             </main>
             @include('components.footer')
         </div>
+
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     </body>
 </html>

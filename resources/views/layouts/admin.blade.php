@@ -14,7 +14,7 @@
     </head>
     <body class="font-sans antialiased bg-slate-100 text-slate-900">
         <div class="min-h-screen flex">
-            @include('admin.partials.sidebar')
+            <x-admin-sidebar />
 
             <div class="flex-1">
                 <header class="bg-white border-b border-slate-200 px-6 py-4 sticky top-0 z-10">
@@ -32,7 +32,7 @@
                 </header>
 
                 <main class="p-6">
-                    @include('admin.partials.alerts')
+                    <x-alerts />
                     @yield('content')
                 </main>
             </div>

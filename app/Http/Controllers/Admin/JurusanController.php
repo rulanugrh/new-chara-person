@@ -13,12 +13,12 @@ class JurusanController extends Controller
     {
         $jurusans = Jurusan::withCount(['pertanyaans', 'kriterias'])->paginate(12);
 
-        return view('admin.jurusans.index', compact('jurusans'));
+        return view('admin.jurusan.index', compact('jurusans'));
     }
 
     public function create()
     {
-        return view('admin.jurusans.create');
+        return view('admin.jurusan.create');
     }
 
     public function store(Request $request)
@@ -34,19 +34,19 @@ class JurusanController extends Controller
 
         Jurusan::create($data);
 
-        return redirect()->route('admin.jurusans.index')->with('success', 'Jurusan berhasil ditambahkan.');
+        return redirect()->route('admin.jurusan.index')->with('success', 'Jurusan berhasil ditambahkan.');
     }
 
     public function show(Jurusan $jurusan)
     {
         $jurusan->load(['kriterias', 'pertanyaans']);
 
-        return view('admin.jurusans.show', compact('jurusan'));
+        return view('admin.jurusan.show', compact('jurusan'));
     }
 
     public function edit(Jurusan $jurusan)
     {
-        return view('admin.jurusans.edit', compact('jurusan'));
+        return view('admin.jurusan.edit', compact('jurusan'));
     }
 
     public function update(Request $request, Jurusan $jurusan)
@@ -62,13 +62,13 @@ class JurusanController extends Controller
 
         $jurusan->update($data);
 
-        return redirect()->route('admin.jurusans.index')->with('success', 'Jurusan berhasil diperbarui.');
+        return redirect()->route('admin.jurusan.index')->with('success', 'Jurusan berhasil diperbarui.');
     }
 
     public function destroy(Jurusan $jurusan)
     {
         $jurusan->delete();
 
-        return redirect()->route('admin.jurusans.index')->with('success', 'Jurusan berhasil dihapus.');
+        return redirect()->route('admin.jurusan.index')->with('success', 'Jurusan berhasil dihapus.');
     }
 }
