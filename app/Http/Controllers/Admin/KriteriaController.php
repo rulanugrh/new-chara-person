@@ -39,13 +39,16 @@ class KriteriaController extends Controller
         return redirect()->route('admin.kriteria.index')->with('success', 'Kriteria berhasil disimpan.');
     }
 
-    public function edit(Kriteria $kriteria)
+    public function edit($id)
     {
-        return view('admin.kriteria.edit', compact('kriteria'));
+        return view('admin.kriteria.edit', [
+            'kriteria' => Kriteria::where('id', $id)->firstOrFail()
+        ]);
     }
 
-    public function update(Request $request, Kriteria $kriteria)
+    public function update(Request $request, $id)
     {
+        $kriteria = Kriteria::where('id', $id)->firstOrFail();
         $data = $request->validate([
             'name' => 'required|string|max:255|unique:kriteria,name,' . $kriteria->id,
             'description' => 'nullable|string',

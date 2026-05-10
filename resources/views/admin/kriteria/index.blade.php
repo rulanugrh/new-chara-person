@@ -22,7 +22,7 @@
                     <div class="text-sm text-slate-500">{{ ucfirst($kriteria->data_source) }} – Maksimal {{ $kriteria->max_value }}</div>
                 </div>
                 <div class="flex flex-wrap items-center gap-2">
-                    <a href="{{ route('admin.kriteria.edit', $kriteria) }}" class="rounded-full border border-slate-300 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Edit</a>
+                    <a href="{{ route('admin.kriteria.edit', $kriteria->id) }}" class="rounded-full border border-slate-300 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Edit</a>
                     <form method="POST" action="{{ route('admin.kriteria.destroy', $kriteria) }}" class="inline-block">
                         @csrf
                         @method('DELETE')

@@ -5,7 +5,7 @@
 
 @section('content')
     <div class="rounded-3xl bg-white p-6 border border-slate-200 shadow-sm">
-        <form action="{{ route('admin.kriteria.update', $kriteria) }}" method="POST" class="space-y-6">
+        <form action="{{ route('admin.kriteria.update', $kriteria->id) }}" method="POST" class="space-y-6">
             @csrf
             @method('PUT')
 
