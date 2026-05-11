@@ -5,16 +5,17 @@
             <div>
                 <div class="font-bold">SPK SMK</div>
                 <div class="text-xs text-slate-400">Admin Panel</div>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <button type="submit"
+                        class="text-sm text-gray-500 hover:text-gray-800 transition">
+                        Logout
+                    </button>
+                </form>
             </div>
         </a>
-       <form method="POST" action="{{ route('logout') }}">
-    @csrf
-
-    <button type="submit"
-        class="text-sm text-gray-500 hover:text-gray-800 transition">
-        Logout
-    </button>
-</form>
+       
     </div>
 
     <nav class="px-4 py-6 space-y-2">

@@ -24,15 +24,15 @@
                         {{ $jurusan->pertanyaans_count }} pertanyaan • {{ $jurusan->kriterias_count }} kriteria
                     </div>
                 </div>
-                <div class="flex flex-wrap items-center gap-2">
-                    <a href="{{ route('admin.jurusan.edit', $jurusan) }}" class="rounded-full border border-slate-300 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Edit</a>
-                    <form method="POST" action="{{ route('admin.jurusan.destroy', $jurusan) }}" class="inline-block">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="rounded-full bg-rose-500 px-4 py-2 text-sm text-white hover:bg-rose-600" onclick="return confirm('Hapus jurusan ini?')">Hapus</button>
-                    </form>
-                    <a href="{{ route('admin.bobot.edit', $jurusan) }}" class="rounded-full border border-indigo-300 px-4 py-2 text-sm text-indigo-700 hover:bg-indigo-50">Atur Bobot</a>
-                </div>
+                <div class="flex flex-wrap justify-end items-center gap-2 flex-shrink-0 lg:ml-auto">
+    <a href="{{ route('admin.jurusan.edit', $jurusan) }}" class="rounded-full border border-slate-300 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 whitespace-nowrap">Edit</a>
+    <form method="POST" action="{{ route('admin.jurusan.destroy', $jurusan) }}" class="inline-block">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="rounded-full bg-rose-500 px-4 py-2 text-sm text-white hover:bg-rose-600 whitespace-nowrap" onclick="return confirm('Hapus jurusan ini?')">Hapus</button>
+    </form>
+    <a href="{{ route('admin.bobot.edit', $jurusan) }}" class="rounded-full border border-indigo-300 px-4 py-2 text-sm text-indigo-700 hover:bg-indigo-50 whitespace-nowrap">Atur Bobot</a>
+</div>
             </div>
         @endforeach
     </div>
