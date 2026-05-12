@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\HasilRekomendasi;
 use App\Services\SAWService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class HasilController extends Controller
 {
@@ -26,7 +27,7 @@ class HasilController extends Controller
             try {
                 $sawService->persistRecommendations($student);
             } catch (\Exception $e) {
-                \Log::error('SAW Service Error: ' . $e->getMessage());
+                Log::error('SAW Service Error: ' . $e->getMessage());
             }
         }
         $recommendations = HasilRekomendasi::with('jurusan')
