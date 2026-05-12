@@ -29,7 +29,6 @@ class HasilController extends Controller
                 \Log::error('SAW Service Error: ' . $e->getMessage());
             }
         }
-
         $recommendations = HasilRekomendasi::with('jurusan')
             ->where('user_id', $student->id)
             ->orderByDesc('score')

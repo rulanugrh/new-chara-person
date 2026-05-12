@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\HasilRekomendasi;
 use App\Models\JawabanSiswa;
 use App\Models\NilaiSiswa;
+use App\Models\HasilRekomendasi;
 use App\Models\Pertanyaan;
+use App\Models\NilaiSiswa;
 use Illuminate\Http\Request;
 
 class KuisionerController extends Controller
@@ -126,7 +128,11 @@ class KuisionerController extends Controller
                 ->with('success', 'Jawaban berhasil disimpan.');
         }
 
+<<<<<<< HEAD
         // Jika ini step terakhir, simpan jawaban halaman terakhir dan hitung rekomendasi
+=======
+        // Jika ini step terakhir, simpan jawaban halaman terakhir  dan hitung rekomendasi
+>>>>>>> ujicoba_ramji
         $offset = ($currentPage - 1) * $perPage;
         $currentStepQuestions = $pertanyaans->slice($offset, $perPage);
 
@@ -165,8 +171,11 @@ class KuisionerController extends Controller
         } catch (\Exception $e) {
             \Log::error('SAW Service Error: ' . $e->getMessage());
         }
+<<<<<<< HEAD
 
         // Redirect ke hasil dengan success message
+=======
+>>>>>>> ujicoba_ramji
         return redirect()->route('student.hasil.index')->with('success', 'Kuisioner berhasil disimpan. Lihat hasil rekomendasi jurusan Anda.');
     }
 
@@ -181,4 +190,8 @@ class KuisionerController extends Controller
         return redirect()->route('student.nilai.index')
             ->with('success', 'Semua data lama telah direset. Silakan input nilai kembali dari awal.');
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> ujicoba_ramji

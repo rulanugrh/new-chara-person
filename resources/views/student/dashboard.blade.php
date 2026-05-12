@@ -150,7 +150,7 @@
                         <div class="text-xs text-gray-400">Lihat rekomendasi jurusan</div>
                     </div>
                     @if($hasNilai && $hasJawaban && !$hasHasil)
-                        <a href="{{ route('student.hasil.index') }}" class="text-xs text-blue-600 hover:text-blue-700 font-medium">
+                       <a href="{{ route('student.hasil.index') }}" class="text-xs text-blue-600 hover:text-blue-700 font-medium">
                             Proses →
                         </a>
                     @elseif($hasHasil)

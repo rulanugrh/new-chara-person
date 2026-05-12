@@ -47,6 +47,7 @@
                                     <div class="text-sm text-gray-600">
                                         <span class="font-medium">Skor SAW:</span>
                                         <span class="text-lg font-bold text-blue-600">{{ number_format($rec->score, 4) }}</span>
+
                                     </div>
 
                                     @if($rec->meta && isset($rec->meta['details']))
@@ -86,7 +87,11 @@
                     <a href="{{ route('student.dashboard') }}" class="px-6 py-3 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-colors">
                         Kembali ke Dashboard
                     </a>
+<<<<<<< HEAD
                     <a href="{{ route('student.ulang') }}" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+=======
+                     <a href="{{ route('student.ulang') }}" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+>>>>>>> ujicoba_ramji
                         Kerjakan Ulang Kuisioner
                     </a>
                 </div>
