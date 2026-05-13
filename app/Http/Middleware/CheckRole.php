@@ -19,14 +19,11 @@ class CheckRole
             return redirect()->route('login');
         }
 
-        if ($role === 'admin' && $request->user()->email !== 'admin@spk.local') {
-            abort(403, 'Akses ditolak. Hanya admin yang bisa mengakses halaman ini.');
+        if ($request->user()->role !== 'admin' || $role !== 'admin') {
+            abort(403, 'Akses ditolak, hanya admin yang bisa mengakses halaman ini');
+        } else {
+            return $next($request);
         }
-
-        if ($role === 'student' && $request->user()->email === 'admin@spk.local') {
-            return redirect()->route('admin.dashboard');
-        }
-
-        return $next($request);
+        
     }
 }
