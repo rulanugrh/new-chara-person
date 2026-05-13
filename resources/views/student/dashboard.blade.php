@@ -1,14 +1,13 @@
-@extends('layouts.student')
-
-@section('content')
-    {{-- Hero Section --}}
+<x-student-layout>
     <section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-center">
         <div>
-            <span class="inline-flex items-center gap-1.5 bg-blue-50 text-blue-700 text-xs font-medium px-3 py-1.5 rounded-full">
+            <span
+                class="inline-flex items-center gap-1.5 bg-blue-50 text-blue-700 text-xs font-medium px-3 py-1.5 rounded-full">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                        d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
                 </svg>
                 SMK Negeri 22 Jakarta
             </span>
@@ -26,47 +25,56 @@
             @if(!$hasNilai)
                 <div class="mt-7 flex flex-wrap gap-3">
                     <a href="{{ route('student.nilai.index') }}"
-                       class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition shadow-sm">
+                        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition shadow-sm">
                         Mulai Input Nilai
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" />
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M5 12l14 0" />
+                            <path d="M13 18l6 -6" />
+                            <path d="M13 6l6 6" />
                         </svg>
                     </a>
                 </div>
             @elseif(!$hasJawaban)
                 <div class="mt-7 flex flex-wrap gap-3">
                     <a href="{{ route('student.kuisioner.index') }}"
-                       class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition shadow-sm">
+                        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition shadow-sm">
                         Mulai Kuisioner
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" />
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M5 12l14 0" />
+                            <path d="M13 18l6 -6" />
+                            <path d="M13 6l6 6" />
                         </svg>
                     </a>
                 </div>
             @elseif(!$hasHasil)
                 <div class="mt-7 flex flex-wrap gap-3">
-                    <a href="{{ route('student.hasil.index') }}" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition shadow-sm">
+                    <a href="{{ route('student.hasil.index') }}"
+                        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition shadow-sm">
                         Lihat Hasil Rekomendasi
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" />
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M5 12l14 0" />
+                            <path d="M13 18l6 -6" />
+                            <path d="M13 6l6 6" />
                         </svg>
                     </a>
                 </div>
             @else
                 <div class="mt-7 flex flex-wrap gap-3">
                     <a href="{{ route('student.hasil.index') }}"
-                       class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition shadow-sm">
+                        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition shadow-sm">
                         Lihat Hasil Lengkap
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M5 12l14 0" /><path d="M13 18l6 -6" /><path d="M13 6l6 6" />
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M5 12l14 0" />
+                            <path d="M13 18l6 -6" />
+                            <path d="M13 6l6 6" />
                         </svg>
                     </a>
                 </div>
@@ -85,12 +93,15 @@
             {{-- Progress Steps --}}
             <div class="space-y-3">
                 {{-- Step 1: Input Nilai --}}
-                <div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center gap-3 {{ $hasNilai ? 'bg-green-50 border-green-200' : '' }}">
-                    <div class="w-8 h-8 rounded-lg {{ $hasNilai ? 'bg-green-100' : 'bg-gray-100' }} flex items-center justify-center flex-shrink-0">
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center gap-3 {{ $hasNilai ? 'bg-green-50 border-green-200' : '' }}">
+                    <div
+                        class="w-8 h-8 rounded-lg {{ $hasNilai ? 'bg-green-100' : 'bg-gray-100' }} flex items-center justify-center flex-shrink-0">
                         @if($hasNilai)
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-600" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                 <path d="M5 12l5 5l10 -10" />
                             </svg>
                         @else
@@ -102,19 +113,23 @@
                         <div class="text-xs text-gray-400">Masukkan nilai rapor SMP</div>
                     </div>
                     @if(!$hasNilai)
-                        <a href="{{ route('student.nilai.index') }}" class="text-xs text-blue-600 hover:text-blue-700 font-medium">
+                        <a href="{{ route('student.nilai.index') }}"
+                            class="text-xs text-blue-600 hover:text-blue-700 font-medium">
                             Mulai →
                         </a>
                     @endif
                 </div>
 
                 {{-- Step 2: Kuisioner --}}
-                <div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center gap-3 {{ $hasJawaban ? 'bg-green-50 border-green-200' : (!$hasNilai ? 'opacity-50' : '') }}">
-                    <div class="w-8 h-8 rounded-lg {{ $hasJawaban ? 'bg-green-100' : 'bg-gray-100' }} flex items-center justify-center flex-shrink-0">
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center gap-3 {{ $hasJawaban ? 'bg-green-50 border-green-200' : (!$hasNilai ? 'opacity-50' : '') }}">
+                    <div
+                        class="w-8 h-8 rounded-lg {{ $hasJawaban ? 'bg-green-100' : 'bg-gray-100' }} flex items-center justify-center flex-shrink-0">
                         @if($hasJawaban)
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-600" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                 <path d="M5 12l5 5l10 -10" />
                             </svg>
                         @else
@@ -126,19 +141,23 @@
                         <div class="text-xs text-gray-400">Jawab pertanyaan minat</div>
                     </div>
                     @if($hasNilai && !$hasJawaban)
-                        <a href="{{ route('student.kuisioner.index') }}" class="text-xs text-blue-600 hover:text-blue-700 font-medium">
+                        <a href="{{ route('student.kuisioner.index') }}"
+                            class="text-xs text-blue-600 hover:text-blue-700 font-medium">
                             Mulai →
                         </a>
                     @endif
                 </div>
 
                 {{-- Step 3: Hasil --}}
-                <div class="bg-white border border-gray-200 rounded-xl p-4 flex items-center gap-3 {{ $hasHasil ? 'bg-green-50 border-green-200' : (!$hasJawaban ? 'opacity-50' : '') }}">
-                    <div class="w-8 h-8 rounded-lg {{ $hasHasil ? 'bg-green-100' : 'bg-gray-100' }} flex items-center justify-center flex-shrink-0">
+                <div
+                    class="bg-white border border-gray-200 rounded-xl p-4 flex items-center gap-3 {{ $hasHasil ? 'bg-green-50 border-green-200' : (!$hasJawaban ? 'opacity-50' : '') }}">
+                    <div
+                        class="w-8 h-8 rounded-lg {{ $hasHasil ? 'bg-green-100' : 'bg-gray-100' }} flex items-center justify-center flex-shrink-0">
                         @if($hasHasil)
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-600" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-green-600" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                 <path d="M5 12l5 5l10 -10" />
                             </svg>
                         @else
@@ -150,11 +169,13 @@
                         <div class="text-xs text-gray-400">Lihat rekomendasi jurusan</div>
                     </div>
                     @if($hasNilai && $hasJawaban && !$hasHasil)
-                       <a href="{{ route('student.hasil.index') }}" class="text-xs text-blue-600 hover:text-blue-700 font-medium">
+                        <a href="{{ route('student.hasil.index') }}"
+                            class="text-xs text-blue-600 hover:text-blue-700 font-medium">
                             Proses →
                         </a>
                     @elseif($hasHasil)
-                        <a href="{{ route('student.hasil.index') }}" class="text-xs text-blue-600 hover:text-blue-700 font-medium">
+                        <a href="{{ route('student.hasil.index') }}"
+                            class="text-xs text-blue-600 hover:text-blue-700 font-medium">
                             Lihat →
                         </a>
                     @endif
@@ -177,9 +198,11 @@
                     {{-- Top Recommendation --}}
                     <div class="bg-white border border-gray-200 rounded-xl p-3 flex items-center gap-3 mb-3">
                         <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center flex-shrink-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-blue-600" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"/>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-blue-600" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.27 5.82 22 7 14.14l-5-4.87 6.91-1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
                             </svg>
                         </div>
                         <div class="flex-1 min-w-0">
@@ -205,10 +228,12 @@
                                 <div>
                                     <div class="flex justify-between text-xs text-gray-500 mb-1">
                                         <span class="truncate pr-2">{{ $rec->jurusan->name }}</span>
-                                        <span class="font-medium text-gray-700 flex-shrink-0">{{ number_format($rec->score, 2) }}</span>
+                                        <span
+                                            class="font-medium text-gray-700 flex-shrink-0">{{ number_format($rec->score, 2) }}</span>
                                     </div>
                                     <div class="h-1.5 bg-gray-200 rounded-full overflow-hidden">
-                                        <div class="h-1.5 {{ $barColor }} rounded-full transition-all duration-500" style="width: {{ $percentage }}%"></div>
+                                        <div class="h-1.5 {{ $barColor }} rounded-full transition-all duration-500"
+                                            style="width: {{ $percentage }}%"></div>
                                     </div>
                                 </div>
                             @endforeach
@@ -216,7 +241,8 @@
                     @endif
 
                     {{-- CTA Button --}}
-                    <a href="{{ route('student.hasil.index') }}" class="mt-3 w-full inline-flex items-center justify-center gap-2 px-3 py-2 bg-blue-600 text-white text-xs font-medium rounded-lg hover:bg-blue-700 transition-colors">
+                    <a href="{{ route('student.hasil.index') }}"
+                        class="mt-3 w-full inline-flex items-center justify-center gap-2 px-3 py-2 bg-blue-600 text-white text-xs font-medium rounded-lg hover:bg-blue-700 transition-colors">
                         Lihat Detail Lengkap
                     </a>
                 </div>
@@ -243,9 +269,10 @@
 
                 <div class="bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-md transition">
                     <div class="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-600" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-600" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M3 12m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
                             <path d="M9 8m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
                             <path d="M15 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
@@ -253,38 +280,45 @@
                     </div>
                     <h3 class="text-base font-semibold text-gray-900 mb-2">Berbasis data</h3>
                     <p class="text-sm text-gray-500 leading-relaxed">
-                        Rekomendasi dihasilkan dari nilai akademik dan hasil kuesioner minat siswa secara terukur dan transparan.
+                        Rekomendasi dihasilkan dari nilai akademik dan hasil kuesioner minat siswa secara terukur dan
+                        transparan.
                     </p>
                 </div>
 
                 <div class="bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-md transition">
                     <div class="w-9 h-9 rounded-lg bg-green-50 flex items-center justify-center mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-600" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-600" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z" />
                             <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
                         </svg>
                     </div>
                     <h3 class="text-base font-semibold text-gray-900 mb-2">Metode SAW</h3>
                     <p class="text-sm text-gray-500 leading-relaxed">
-                        Menggunakan Simple Additive Weighting untuk perangkingan jurusan secara objektif dengan bobot kriteria yang dapat dikonfigurasi.
+                        Menggunakan Simple Additive Weighting untuk perangkingan jurusan secara objektif dengan bobot
+                        kriteria yang dapat dikonfigurasi.
                     </p>
                 </div>
 
                 <div class="bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-md transition">
                     <div class="w-9 h-9 rounded-lg bg-amber-50 flex items-center justify-center mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-600" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-amber-600" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                             <path d="M12 7a5 5 0 1 0 5 5" />
-                            <path d="M18 3l0 4l-4 0" /><path d="M18 7l-7.536 7.536" />
+                            <path d="M18 3l0 4l-4 0" />
+                            <path d="M18 7l-7.536 7.536" />
                         </svg>
                     </div>
                     <h3 class="text-base font-semibold text-gray-900 mb-2">Tepat sasaran</h3>
                     <p class="text-sm text-gray-500 leading-relaxed">
-                        Membantu siswa memilih jurusan sesuai potensi dan minat agar lebih siap dan termotivasi dalam belajar.
+                        Membantu siswa memilih jurusan sesuai potensi dan minat agar lebih siap dan termotivasi dalam
+                        belajar.
                     </p>
                 </div>
 
@@ -308,25 +342,25 @@
             <div class="grid md:grid-cols-4 gap-5">
                 @php
                     $steps = [
-                        ['num' => '1', 'title' => 'Registrasi',     'desc' => 'Buat akun baru menggunakan data diri yang valid dan lengkap.'],
-                        ['num' => '2', 'title' => 'Isi data',        'desc' => 'Masukkan nilai akademik dan informasi diri secara lengkap.'],
-                        ['num' => '3', 'title' => 'Isi kuesioner',   'desc' => 'Jawab pertanyaan minat sesuai kondisi dan keinginanmu.'],
-                        ['num' => '4', 'title' => 'Lihat hasil',     'desc' => 'Sistem memberikan rekomendasi jurusan terbaik berdasarkan skor SAW.'],
+                        ['num' => '1', 'title' => 'Registrasi', 'desc' => 'Buat akun baru menggunakan data diri yang valid dan lengkap.'],
+                        ['num' => '2', 'title' => 'Isi data', 'desc' => 'Masukkan nilai akademik dan informasi diri secara lengkap.'],
+                        ['num' => '3', 'title' => 'Isi kuesioner', 'desc' => 'Jawab pertanyaan minat sesuai kondisi dan keinginanmu.'],
+                        ['num' => '4', 'title' => 'Lihat hasil', 'desc' => 'Sistem memberikan rekomendasi jurusan terbaik berdasarkan skor SAW.'],
                     ];
                 @endphp
 
                 @foreach ($steps as $step)
-                <div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 text-center">
-                    <div class="w-9 h-9 rounded-full bg-blue-600 text-white text-sm font-semibold flex items-center justify-center mx-auto mb-4">
-                        {{ $step['num'] }}
+                    <div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 text-center">
+                        <div
+                            class="w-9 h-9 rounded-full bg-blue-600 text-white text-sm font-semibold flex items-center justify-center mx-auto mb-4">
+                            {{ $step['num'] }}
+                        </div>
+                        <h3 class="text-sm font-semibold text-gray-900 mb-2">{{ $step['title'] }}</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed">{{ $step['desc'] }}</p>
                     </div>
-                    <h3 class="text-sm font-semibold text-gray-900 mb-2">{{ $step['title'] }}</h3>
-                    <p class="text-xs text-gray-500 leading-relaxed">{{ $step['desc'] }}</p>
-                </div>
                 @endforeach
             </div>
         </div>
     </section>
 
-</div>
-@endsection
+</x-student-layout>

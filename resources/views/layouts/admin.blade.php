@@ -20,9 +20,9 @@
                 <header class="bg-white border-b border-slate-200 px-6 py-4 sticky top-0 z-10">
                     <div class="flex items-center justify-between gap-4">
                         <div>
-                            <h1 class="text-xl font-semibold text-slate-900">@yield('title')</h1>
+                            <h1 class="text-xl font-semibold text-slate-900">{{ $title }}</h1>
                             @hasSection('subtitle')
-                                <p class="text-sm text-slate-500">@yield('subtitle')</p>
+                                <p class="text-sm text-slate-500">{{ $subtitle }}</p>
                             @endif
                         </div>
                         <div class="text-sm text-slate-600">
@@ -33,7 +33,7 @@
 
                 <main class="p-6">
                     <x-alerts />
-                    @yield('content')
+                    {{ $slot }}
                 </main>
             </div>
         </div>

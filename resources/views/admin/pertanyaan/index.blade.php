@@ -1,9 +1,5 @@
-@extends('layouts.admin')
 
-@section('title', 'Pertanyaan Kuisioner')
-@section('subtitle', 'Kelola pertanyaan khusus untuk setiap jurusan')
-
-@section('content')
+<x-admin-layout title="Pertanyaan Kuisioner" subtitle="Kelola pertanyaan khusus untuk setiap jurusan">
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
         <div>
             <h2 class="text-lg font-semibold text-slate-900">Pertanyaan Kuisioner</h2>
@@ -22,13 +18,13 @@
             <a href="{{ route('admin.pertanyaan.create') }}" class="rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">Tambah Pertanyaan</a>
         </div>
     </div>
-
+    
     <div class="space-y-4">
         @foreach($pertanyaans as $pertanyaan)
             <div class="rounded-3xl bg-white p-5 border border-slate-200 shadow-sm">
                 <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4">
                     <div>
-                        <div class="font-semibold text-slate-900">{{ $pertanyaan->question }}</div>
+                        <div class="font-semibold text-slate-900" style="white-space: pre-line;" >{{ $pertanyaan->question }}</div>
                         <div class="text-sm text-slate-500 mt-1">Jurusan: {{ $pertanyaan->jurusan->name }}</div>
                     </div>
                     <div class="flex flex-wrap items-center gap-2">
@@ -43,6 +39,7 @@
             </div>
         @endforeach
     </div>
-
+    
     <div class="mt-6">{{ $pertanyaans->withQueryString()->links() }}</div>
-@endsection
+
+</x-admin-layout>

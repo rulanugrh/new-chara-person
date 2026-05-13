@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Middleware\IsAdministrator;
+use App\Http\Middleware\IsStudent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,10 +29,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware(['auth', 'verified'])
+Route::middleware(['auth', 'verified', IsAdministrator::class])
     ->prefix('admin')
     ->name('admin.')
-    ->middleware('role:admin')
     ->group(function () {
         Route::get('/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
         Route::resource('jurusan', \App\Http\Controllers\Admin\JurusanController::class);
@@ -45,10 +46,9 @@ Route::middleware(['auth', 'verified'])
         Route::get('hasil-rekomendasi/{user}', [\App\Http\Controllers\Admin\HasilRekomendasiController::class, 'show'])->name('hasil.show');
     });
 
-Route::middleware(['auth', 'verified'])
+Route::middleware(['auth', 'verified', IsStudent::class])
     ->prefix('student')
     ->name('student.')
-    ->middleware('role:student')
     ->group(function () {
         Route::get('/dashboard', [\App\Http\Controllers\Student\DashboardController::class, 'index'])->name('dashboard');
         Route::get('/nilai', [\App\Http\Controllers\Student\NilaiController::class, 'index'])->name('nilai.index');
