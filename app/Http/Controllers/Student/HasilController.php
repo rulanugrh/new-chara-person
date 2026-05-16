@@ -33,6 +33,7 @@ class HasilController extends Controller
         $recommendations = HasilRekomendasi::with('jurusan')
             ->where('user_id', $student->id)
             ->orderByDesc('score')
+            ->take(3)
             ->get();
 
         return view('student.hasil', compact('recommendations'));

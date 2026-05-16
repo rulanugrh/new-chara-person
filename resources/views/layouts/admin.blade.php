@@ -21,9 +21,9 @@
                     <div class="flex items-center justify-between gap-4">
                         <div>
                             <h1 class="text-xl font-semibold text-slate-900">{{ $title }}</h1>
-                            @hasSection('subtitle')
-                                <p class="text-sm text-slate-500">{{ $subtitle }}</p>
-                            @endif
+                        @if(!empty($subtitle))
+                            <p class="text-sm text-slate-500">{{ $subtitle }}</p>
+                        @endif
                         </div>
                         <div class="text-sm text-slate-600">
                             {{ auth()->user()->name }}
@@ -37,5 +37,6 @@
                 </main>
             </div>
         </div>
+        @stack('scripts')
     </body>
 </html>

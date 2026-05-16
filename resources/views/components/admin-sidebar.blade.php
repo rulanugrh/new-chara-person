@@ -1,4 +1,4 @@
-<aside class="w-72 bg-slate-950 text-slate-100 min-h-screen">
+<aside class="w-72 bg-slate-950 text-slate-100 sticky top-0 h-screen self-start overflow-y-auto">
     <div class="px-6 py-5 border-b border-slate-800">
         <a href="{{ route('admin.dashboard') }}" class="flex items-center gap-3">
             <div class="h-10 w-10 rounded-xl bg-indigo-500 flex items-center justify-center text-white">BK</div>
