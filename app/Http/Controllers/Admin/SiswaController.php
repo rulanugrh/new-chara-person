@@ -13,7 +13,7 @@ class SiswaController extends Controller
 {
     public function index()
 {
-    $siswa = User::where('role', 'student')
+    $siswa = User::where('role', 'siswa')
         ->withCount(['jawabanSiswas', 'nilaiSiswas', 'hasilRekomendasis'])
         ->paginate(15);
 
